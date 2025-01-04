@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/jobhunting-0.0.1-SNAPSHOT.jar /app/jobhunting.jar
 
 # Expose the port the app will run on
-EXPOSE 8080
+EXPOSE 8081
 
 # Run the Spring Boot app
 ENTRYPOINT ["java", "-jar", "/app/jobhunting.jar"]

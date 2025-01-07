@@ -1,56 +1,106 @@
-echo "# Job Hunting Platform
+Job Hunting Project
+===================
 
-This is a basic application to showcase my learning of Spring Boot and MongoDB. It includes a job hunting platform where users can search for jobs and employers can post job listings.
+This is a basic project where you can add job openings and view them. The application also provides a filter and search bar for real-time job filtering.
 
-## Project Structure
+Features
+--------
 
-\`\`\`
-job-hunting-platform/
-├── jobhunting/   (Spring Boot project)
-└── UISpringMongodb-main/  (React project)
-\`\`\`
+The repository contains two main components:
 
-## Setup and Run Instructions
+-   Backend service for managing job data and handling API requests.
+-   Frontend service for displaying job openings and user interactions.
 
-### Backend (Spring Boot)
+Technologies Used
+-----------------
 
-1. Navigate to the \`jobhunting\` directory:
-    \`\`\`sh
-    cd jobhunting
-    \`\`\`
+-   **Frontend:** React.js (Hooks, State Management)
+-   **Backend:** Spring Boot (RESTful APIs, Data Management)
+-   **Database:** MongoDB Atlas (NoSQL Database)
+-   **Version Control:** Git
 
-2. Build the project using Maven:
-    \`\`\`sh
-    mvn clean install
-    \`\`\`
+Installation
+------------
 
-3. Run the Spring Boot application:
-    \`\`\`sh
-    mvn spring-boot:run
-    \`\`\`
+1.  Clone the repository:
 
-### Frontend (React)
+    ```
+    git clone <repository-url>
 
-1. Navigate to the \`UISpringMongodb-main\` directory:
-    \`\`\`sh
-    cd UISpringMongodb-main
-    \`\`\`
+    ```
 
-2. Install the dependencies:
-    \`\`\`sh
+2.  Navigate to the project directory:
+
+    ```
+    cd job-hunting-project
+
+    ```
+
+3.  Install frontend dependencies:
+
+    ```
+    cd frontend
     npm install
-    \`\`\`
 
-3. Start the React application:
-    \`\`\`sh
+    ```
+
+4.  Install backend dependencies:
+
+    ```
+    cd backend
+    mvn clean install
+
+    ```
+
+5.  Set up MongoDB Atlas connection in `application.properties`:
+
+    ```
+    spring.data.mongodb.uri=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<database>
+
+    ```
+
+Usage
+-----
+
+1.  **Start Backend:**
+
+    ```
+    cd backend
+    mvn spring-boot:run
+
+    ```
+
+2.  **Start Frontend:**
+
+    ```
+    cd frontend
     npm start
-    \`\`\`
 
-## Technologies Used
+    ```
 
-- **Backend**: Spring Boot, MongoDB
-- **Frontend**: React, Material-UI
+3.  Access the app at `http://localhost:3000`.
 
-Feel free to check out the code and contribute on [GitHub](https://github.com/Kunalsarkar404/job-hunting-platform).
+API Endpoints
+-------------
 
-#SpringBoot #MongoDB #React #JobSearch #Learning #WebDevelopment #Programming #OpenSource" > README.md
+-   `GET /api/jobs` -- Fetch all job applications.
+-   `POST /api/jobs` -- Add a new job application.
+-   `PUT /api/jobs/{id}` -- Update a job application.
+-   `DELETE /api/jobs/{id}` -- Delete a job application.
+
+Contributing
+------------
+
+Contributions are welcome! Please follow these steps:
+
+1.  Fork the repository.
+2.  Create a new branch: `git checkout -b feature-name`
+3.  Commit your changes: `git commit -m 'Add feature'`
+4.  Push to the branch: `git push origin feature-name`
+5.  Open a pull request.
+
+Contact
+-------
+
+-   **Author:** Kunal Sarkar
+-   **Email:** <interviewkunal@gmail.com>

@@ -30,13 +30,15 @@ const Create = () => {
     ai: ["Python", "TensorFlow", "PyTorch", "Keras", "Scikit-learn"],
   };
 
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!form.profile || !form.exp || !form.jobType || !form.desc || form.techs.length === 0) {
+    if (!form.profile || !form.jobType || !form.desc || form.techs.length === 0) {
       setError('Please fill all the fields correctly.');
       return;
     }
-    fetch("http://localhost:8080/post", {
+    fetch(`${backendURL}/post`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +48,7 @@ const Create = () => {
       .then((response) => {
         if (response.ok) {
           setOpen(true);
-          setTimeout(() => navigate('/employee/'), 1500);
+          setTimeout(() => navigate('/'), 1500);
         } else {
           setError("Failed to create post.");
         }

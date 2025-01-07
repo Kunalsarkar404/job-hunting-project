@@ -20,13 +20,13 @@ const Feed = () => {
   const [exp, setExp] = useState("");
   const [post, setPost] = useState([]);
 
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
+
   const fetchPosts = async (searchQuery, experience) => {
     try {
-      const response = await axios.get(`http://localhost:8080/posts`, {
-        params: {
-          text: searchQuery,
-          exp: experience
-        }
+      console.log(`${backendURL}`)
+      const response = await axios.get(`${backendURL}/posts`, {
+        params: { text: searchQuery, exp: experience }
       });
       setPost(response.data);
     } catch (error) {
@@ -36,12 +36,13 @@ const Feed = () => {
 
   const fetchInitialPosts = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/allPosts`);
+      const response = await axios.get(`${backendURL}/allPosts`);
       setPost(response.data);
     } catch (error) {
       console.error("Error fetching initial posts:", error);
     }
   };
+
 
   useEffect(() => {
     fetchInitialPosts();
@@ -84,9 +85,9 @@ const Feed = () => {
             <MenuItem value={4}>4 years</MenuItem>
             <MenuItem value={5}>5+ years</MenuItem>
           </Select>
-          <Button 
+          <Button
             className="search-button"
-            variant="contained" 
+            variant="contained"
             onClick={handleSearchClick}
           >
             Search
@@ -110,8 +111,8 @@ const Feed = () => {
                 Skills:
               </Typography>
               <div className="post-skills">
-                {p.techs.map((s, i) => (
-                  <Typography key={i} className="post-skill">
+                {p.techs.map((s, index) => (
+                  <Typography key={index} className="post-skill">
                     {s}
                   </Typography>
                 ))}

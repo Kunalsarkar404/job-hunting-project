@@ -1,6 +1,6 @@
 # Ignore the target folder but not the jar file
 target/*
-!target/*.jar  # Allow .jar files in the target folder
+target/*.jar  # Allow .jar files in the target folder
 
 # Exclude other irrelevant build files (IDE settings, etc.)
 !.mvn/wrapper/maven-wrapper.jar

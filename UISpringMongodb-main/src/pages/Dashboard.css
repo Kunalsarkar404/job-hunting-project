@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+
   }
   
   .title {
@@ -12,6 +13,11 @@
   
   .home-button {
     margin: 10px;
+    margin-bottom: 20px;
+  }
+
+  .tab-context {
+    margin-top: 20px;
   }
   
   .tab-container {

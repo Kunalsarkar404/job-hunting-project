@@ -4,6 +4,7 @@ import com.example.jobhunting.repository.PostRepository;
 import com.example.jobhunting.model.Post;
 import com.example.jobhunting.repository.SearchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,9 +13,7 @@ import springfox.documentation.annotations.ApiIgnore;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 public class PostController {
 
     @Autowired

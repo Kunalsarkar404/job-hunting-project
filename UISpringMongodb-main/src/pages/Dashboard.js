@@ -20,7 +20,7 @@ export default function Home() {
       <Typography variant='h3' className="title">EMPLOYER DASHBOARD</Typography>
       <Button variant="outlined" className="home-button"><Link to="/" className="link">Home</Link></Button>
       
-      <TabContext value={value}>
+      <TabContext className="tab-context" value={value}>
         <Box className="tab-container">
           <TabList onChange={handleChange} aria-label="dashboard tabs">
             <Tab label="Create Post" value="1" className="tab" />
